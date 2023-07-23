@@ -1,0 +1,16 @@
+# air.toml
+
+root = "."
+tmp_dir = "tmp"
+build_dir = "tmp"
+bin = "tmp/main"
+full_bin = "tmp/.air"
+exclude_dir = []
+include_ext = ["go"]
+exclude_ext = []
+ignored_tmpfiles = [".gitignore"]
+ignored_dirs = [".git", "tmp"]
+build_args = ["-o", "tmp/main"]
+
+[[watcher]]
+dir = "."
