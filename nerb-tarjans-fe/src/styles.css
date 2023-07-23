@@ -1,0 +1,80 @@
+/* Colors Constants */
+:root {
+  --background-dark: #d0d6f5;
+  --background-light: #f1f1f1;
+  --text: #5c245a;
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --border-color: #444;
+  --accent-color: #666;
+}
+/* Dark mode styles */
+.dark-mode {
+  --background-dark: #000;
+  --background-light: #222222;
+  --text: #f1f1f1;
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --border-color: #666;
+  --accent-color: #444;
+  /* Update background color for dark mode */
+  background-color: var(--background-dark);
+  color: var(--text);
+}
+
+/* Global styles */
+body {
+  background-color: var(--background-dark);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* App component */
+.app {
+  text-align: center;
+  position: relative; /* For positioning the toggle button */
+  padding-top: 20px; /* Add padding for the toggle button */
+  /* depends on window height and width */
+  padding-bottom: 300px; /* Add padding for the toggle button */
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.graph-form {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--background-light);
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 10px;
+  background-color: var(--background-dark);
+  color: var(--text);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 1px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--background-light);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-color-hover);
+}
+
