@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import GraphForm from './GraphForm';
+import GraphVis from './Graph';
+import BridgesVis from './Bridges';
+// import { Sigma, RandomizeNodePositions } from 'react-sigma';
 import './styles.css';
 
 function App() {
@@ -20,13 +23,13 @@ function App() {
     // })
     // .then(response => response.json())
     // .then(data => {
-    //   setSccs(data.sccs);
-    //   setBridges(data.bridges);
-    // })
-    // .catch(error => console.error('Error:', error));
-
-    setSccs([['A', 'B'], ['B', 'C', 'A']]);
-    setBridges([['A', 'B']]);
+      //   setSccs(data.sccs);
+      //   setBridges(data.bridges);
+      // })
+      // .catch(error => console.error('Error:', error));
+      
+    setSccs([['A', 'B', 'A'], ['B', 'C', 'A', 'B'], ['B', 'C', 'A', 'B'], ['D', 'E', 'F', 'D'], ['D', 'E', 'F', 'D'], ['B', 'C', 'A', 'B'], ['D', 'E', 'F', 'D'], ['G', 'H', 'I', 'G'], ['J', 'K', 'L', 'M', 'J'], ['R']]); // Dummy data
+    setBridges([['A', 'B'], ['B', 'C'], ['D', 'E']]); // Dummy data
   };
 
   const toggleDarkMode = () => {
@@ -45,11 +48,16 @@ function App() {
         <h2>SCCs:</h2>
         {sccs.map((scc, index) => (
           <div key={index}>{scc.join(' --> ')}</div>
-        ))}
+          ))}
+        {/* Render the GraphViz component with the SCCs data */}
+        <GraphVis sccs={sccs} />
+
         <h2>Bridges:</h2>
         {bridges.map((bridge, index) => (
           <div key={index}>{bridge[0]} -- {bridge[1]}</div>
         ))}
+        {/* Render the BridgesViz component with the bridges data */}
+        <BridgesVis bridges={bridges} />
       </div>
     </div>
   );

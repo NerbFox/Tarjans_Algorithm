@@ -11,7 +11,7 @@
 /* Dark mode styles */
 .dark-mode {
   --background-dark: #000;
-  --background-light: #222222;
+  --background-light: #2c2929;
   --text: #f1f1f1;
   --primary-color: #007bff;
   --primary-color-hover: #0056b3;
