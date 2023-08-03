@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 function GraphVis({ sccs }) {
   const svgRef = useRef();
-  const heightPercentage = 0.67;
+  const heightPercentage = 0.6;
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     const width = window.innerWidth;
@@ -30,6 +30,12 @@ function GraphVis({ sccs }) {
     const nodes = [];
 
     sccs.forEach(scc => {
+      // check if the height is enough to draw the graph
+      // alert("currentY: " + currentY + " height: " + height + " currentY + nodeSpacing: " + (currentY + nodeSpacing));
+      // if ((currentY + nodeSpacing) > height) {
+      //   height = height+nodeSpacing+20;
+      //   alert("height: " + height);
+      // }
       let prevNode;
       let firstNode;
       let lastNode;
