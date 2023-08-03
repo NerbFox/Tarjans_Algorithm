@@ -4,11 +4,11 @@ import * as d3 from 'd3';
 
 function BridgesVis({ bridges }) {
   const svgRef = useRef();
-
+  const heightPercentage = 0.6;
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     const width = window.innerWidth;
-    const height = window.innerHeight;
+    const height = window.innerHeight * heightPercentage;
     const nodeSpacing = 80; // Adjust the spacing between nodes
     const bridgespacing = 200; // Adjust the spacing between bridges
 
@@ -90,7 +90,7 @@ function BridgesVis({ bridges }) {
       .attr('r', 20)
       .attr('cx', d => d.x)
       .attr('cy', d => d.y)
-      .style('fill', '#000');
+      .style('fill', '#351c75')
 
     // Create node labels (text)
     const label = svg.selectAll('.label')
@@ -108,7 +108,7 @@ function BridgesVis({ bridges }) {
   }, [bridges]);
 
   return (
-    <svg ref={svgRef} width={window.innerWidth} height={window.innerHeight}>
+    <svg ref={svgRef} width={window.innerWidth} height={window.innerHeight * heightPercentage}>
       {/* Add any additional components or elements as needed */}
     </svg>
   );
