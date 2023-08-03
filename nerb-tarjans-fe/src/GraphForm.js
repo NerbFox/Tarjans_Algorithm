@@ -9,7 +9,7 @@ function GraphForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const edges = graphInput.split('\n').filter(edge => edge.trim() !== '');
+    const edges = graphInput
     onSubmit(edges);
   };
 
@@ -17,11 +17,15 @@ function GraphForm({ onSubmit }) {
     <form className="graph-form" onSubmit={handleSubmit}>
       <textarea
         rows="5"
-        placeholder="Enter the graph edges (e.g., A B, B C, C A)"
+        placeholder="Enter the graph edges (e.g. 
+          A B 
+          B C 
+          C A 
+          B D)"
         value={graphInput}
         onChange={handleInputChange}
       />
-      <button type="submit">Find SCCs and Bridges</button>
+      <button type="submit">Find SCCS and Bridges</button>
     </form>
   );
 }

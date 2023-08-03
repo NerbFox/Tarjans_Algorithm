@@ -20,9 +20,9 @@ function GraphViz({ sccs }) {
     // Create links and nodes data from SCCs
     const links = [];
     const nodes = [];
-    let xPosition = 100;
-    const nodeSpacing = 15; // Adjust the spacing between nodes
-    const sscSpacing = 2; // Adjust the spacing between SCCs
+    // let xPosition = 100;
+    // const nodeSpacing = 15; // Adjust the spacing between nodes
+    // const sscSpacing = 2; // Adjust the spacing between SCCs
     const arrowLength = 17; // Adjust the length of the arrow
     const distance_nodes = 80 
 
