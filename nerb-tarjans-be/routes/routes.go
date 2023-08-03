@@ -9,8 +9,9 @@ import (
 
 func SetupRoutes() *mux.Router {
     r := mux.NewRouter()
-
-    r.HandleFunc("/api/something", handlers.SomeHandler).Methods("GET")
+    // get all sscs, accepting input edges in json format
+    r.HandleFunc("/api/tarjans", handlers.TarjansHandler).Methods("POST")
+    // r.HandleFunc("/api/something", handlers.SomeHandler).Methods("GET")
     // Add more routes here
 
     return r
