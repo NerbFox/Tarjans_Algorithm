@@ -104,7 +104,8 @@ function App() {
   };
 
   return (
-    <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
+    // if darkMode is true, add the class 'dark-mode' to the app div
+    <div className={`app ${darkMode ? 'dark-mode' : ''}`}>  
       <h1>Strongly Connected Components and Bridges</h1>
       <button className="toggle-button" onClick={toggleDarkMode}>
         {darkMode ? 'Light Mode' : 'Dark Mode'}
